@@ -11,7 +11,8 @@ const App = () => (
       <Header />
       <div className='container' >
         <div className='jumbotron' >
-          <Faction />
+          <FactionFire />
+          <FactionIce />
           <Character />
           <Other />
         </div>
