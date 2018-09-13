@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Character extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       error: null,
       isLoaded: false,
@@ -44,17 +44,21 @@ class Character extends Component {
         <ul>
           {console.log('items', items)}
           <li>Name: {items.name}</li>
-          <li>Culture: {items.Culture}</li>
+          <li>Culture: {items.culture}</li>
           <li>Born: {items.born}</li>
           <li>Gender: {items.gender}</li>
           <li>Titles: {
-              <ul>
-                {items.aliases.map(item => (
-                  <li>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="row">
+              <div className="col-4">
+                <ul className="list-group">
+                  {items.aliases.map(item => (
+                    <li className="list-group-item">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             }</li>
            <li>Played By: {
               <ul>
