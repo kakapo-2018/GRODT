@@ -10,6 +10,7 @@ server.use(cors('*'))
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
+
 //server.use('/api/path', require('./path/to/router'))
 
 module.exports = server
