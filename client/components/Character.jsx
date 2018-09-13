@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-const api_key = 'AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA'
-
-//https://www.googleapis.com/customsearch/v1?q=littlefinger&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA
 
 class Character extends Component {
   constructor(props) {
@@ -11,10 +8,9 @@ class Character extends Component {
       error: null,
       isLoaded: false,
       items: [],
-      images: ""
+      image: ""
     };
   }
-// `https://www.googleapis.com/customsearch/v1?q=${items.name}&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`
 
   componentDidMount() {
     fetch("https://anapioficeandfire.com/api/characters/583")
@@ -27,9 +23,6 @@ class Character extends Component {
             items: result
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           this.setState({
             isLoaded: true,
@@ -37,37 +30,23 @@ class Character extends Component {
           });
         }
       )
-      .finally(
-        
-        fetch(`https://www.googleapis.com/customsearch/v1?q=${this.state.items.name}&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
+      .then(
+        fetch(`https://www.googleapis.com/customsearch/v1?q=jon snow&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
         .then(res => res.json())
         .then(
           (image) => {
             console.log('image', image)
             this.setState({
               isLoaded: true,
-              images: image.items[0].link
+              image: image.items[0].link
             })
           })
       ) 
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // console.log('heyyy')
-    // fetch(`https://www.googleapis.com/customsearch/v1?q=littlefinger&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
-    //     .then(res => res.json())
-    //     .then(
-    //       (image) => {
-    //         console.log('image', image)
-    //         this.setState({
-    //           isLoaded: true,
-    //           images: image.items[0].link
-    //         })
-    //       })
-  }
 
   render() {
-    const { error, isLoaded, items, images } = this.state;
+    const { error, isLoaded, items, image } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -75,7 +54,7 @@ class Character extends Component {
     } else {
       return (
         <ul>
-          <img src={images} ></img>
+          <img src={image} ></img>
           <li>Name: {items.name}</li>
           <li>Culture: {items.culture}</li>
           <li>Born: {items.born}</li>
