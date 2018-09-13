@@ -1,0 +1,68 @@
+.app {
+
+}
+
+.wrapper {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  
+}
+
+.fire {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: red;
+  height: 400px;
+  float: left;
+  text-align: center;
+}
+
+.ice {
+  display: flex;
+  flex-direction: column;
+  background-color: skyblue;
+  height: 400px;
+  margin-left: 50%;
+  text-align: center;
+}
+
+.header {
+  background-color: rgba(167, 167, 167, 0.3);
+  text-align: center;
+  vertical-align: middle;
+  /* top: 20px; */
+  height: 100px;
+}
+
+.factionfire {
+  
+}
+
+.factionice {
+
+}
+
+.table {
+  width: 20%;
+}
+
+.houseTable {
+  border: 1px solid black;
+  margin: 0 auto;
+  /* width: 50%; */
+}
+
+.houseCell {
+  border: 2px solid black;
+  height: 100px;
+  /* width: 100%; */
+}
+
+.tableRow {
+  border: 2px solid black;
+  /* width: 50%; */
+  
+}
+
