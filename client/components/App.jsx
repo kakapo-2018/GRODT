@@ -1,31 +1,25 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import Header from './Header'
+import Character from './Character'
+import Faction from './Faction'
+import Other from './Other'
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-
-    }
-
-  }
-
-  render() {
-    return (
-      <Router>
-        <div className='app'>
-
-          <Header />
-          {/* <h1>Hello World</h1> */}
-          {/* <Route exact path="/" component={ComponentToRender} /> */}
+const App = () => (
+  <Router>
+    <div className='app-container section'>
+      <Header />
+      <div className='container' >
+        <div className='jumbotron' >
+          <Faction />
+          <Character />
+          <Other />
         </div>
-
-      </Router>
-    )
-  }
-
-}
+      </div>
+    </div>
+  </Router>
+)
 
 export default App
+
+{/* <Route exact path="/" component={ComponentToRender} /> */ }
