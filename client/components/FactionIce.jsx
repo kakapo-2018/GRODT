@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Faction = () => (
-    <div className=''>
+const FactionIce = () => (
+    <div className='factionice'>
       <p>Faction Data Here</p>
     </div>
 )
 
-export default Faction
+export default FactionIce

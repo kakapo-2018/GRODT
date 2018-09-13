@@ -2,14 +2,30 @@
 
 }
 
+.wrapper {
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  
+}
+
 .fire {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
   background-color: red;
   height: 400px;
+  float: left;
+  text-align: center;
 }
 
 .ice {
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  background-color: skyblue;
   height: 400px;
+  margin-left: 50%;
+  text-align: center;
 }
 
 .header {
@@ -20,6 +36,10 @@
   height: 100px;
 }
 
-.firefaction {
+.factionfire {
   
+}
+
+.factionice {
+
 }
