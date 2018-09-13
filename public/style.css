@@ -4,7 +4,7 @@
 
 .wrapper {
   width: 80%;
-  height: 200px;
+  height: 100%;
   margin: auto;
   
 }
@@ -43,3 +43,26 @@
 .factionice {
 
 }
+
+.table {
+  width: 20%;
+}
+
+.houseTable {
+  border: 1px solid black;
+  margin: 0 auto;
+  /* width: 50%; */
+}
+
+.houseCell {
+  border: 2px solid black;
+  height: 100px;
+  /* width: 100%; */
+}
+
+.tableRow {
+  border: 2px solid black;
+  /* width: 50%; */
+  
+}
+

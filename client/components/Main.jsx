@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FactionFire from './FactionFire'
 
 class Main extends Component {
     constructor() {
@@ -11,6 +12,7 @@ class Main extends Component {
                 
                 <div className='fire'>
                     <h1>Fire</h1>
+                    <FactionFire />
                 </div>
                 
                 <div className='ice'>
