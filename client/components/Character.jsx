@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 
+const api_key = 'AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA'
+
+//https://www.googleapis.com/customsearch/v1?q=littlefinger&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA
+
 class Character extends Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      images: ""
     };
   }
+// `https://www.googleapis.com/customsearch/v1?q=${items.name}&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`
 
   componentDidMount() {
     fetch("https://anapioficeandfire.com/api/characters/583")
@@ -31,10 +37,37 @@ class Character extends Component {
           });
         }
       )
+      .finally(
+        
+        fetch(`https://www.googleapis.com/customsearch/v1?q=${this.state.items.name}&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
+        .then(res => res.json())
+        .then(
+          (image) => {
+            console.log('image', image)
+            this.setState({
+              isLoaded: true,
+              images: image.items[0].link
+            })
+          })
+      ) 
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // console.log('heyyy')
+    // fetch(`https://www.googleapis.com/customsearch/v1?q=littlefinger&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
+    //     .then(res => res.json())
+    //     .then(
+    //       (image) => {
+    //         console.log('image', image)
+    //         this.setState({
+    //           isLoaded: true,
+    //           images: image.items[0].link
+    //         })
+    //       })
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, items, images } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -42,7 +75,7 @@ class Character extends Component {
     } else {
       return (
         <ul>
-          {console.log('items', items)}
+          <img src={images} ></img>
           <li>Name: {items.name}</li>
           <li>Culture: {items.culture}</li>
           <li>Born: {items.born}</li>
@@ -76,6 +109,4 @@ class Character extends Component {
   }
 }
 
-
- 
 export default Character;
