@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
+
 class Character extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      image: ""
     };
   }
 
@@ -21,9 +23,6 @@ class Character extends Component {
             items: result
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           this.setState({
             isLoaded: true,
@@ -31,10 +30,23 @@ class Character extends Component {
           });
         }
       )
+      .then(
+        fetch(`https://www.googleapis.com/customsearch/v1?q=jon snow&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
+        .then(res => res.json())
+        .then(
+          (image) => {
+            console.log('image', image)
+            this.setState({
+              isLoaded: true,
+              image: image.items[0].link
+            })
+          })
+      ) 
   }
 
+
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, items, image } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -42,19 +54,23 @@ class Character extends Component {
     } else {
       return (
         <ul>
-          {console.log('items', items)}
+          <img src={image} ></img>
           <li>Name: {items.name}</li>
-          <li>Culture: {items.Culture}</li>
+          <li>Culture: {items.culture}</li>
           <li>Born: {items.born}</li>
           <li>Gender: {items.gender}</li>
           <li>Titles: {
-              <ul>
-                {items.aliases.map(item => (
-                  <li>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="row">
+              <div className="col-4">
+                <ul className="list-group">
+                  {items.aliases.map(item => (
+                    <li className="list-group-item">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             }</li>
            <li>Played By: {
               <ul>
@@ -72,6 +88,4 @@ class Character extends Component {
   }
 }
 
-
- 
 export default Character;
