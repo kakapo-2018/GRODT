@@ -1,13 +1,31 @@
 import React from 'react'
-import {HashRouter as Router, Route} from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
+import Header from './Header'
 
-const App = () => (
-  <Router>
-    <div className='app-container section'>
-      <h1>Hello World</h1>
-      {/* <Route exact path="/" component={ComponentToRender} /> */}
-    </div>
-  </Router>
-)
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+
+    }
+
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className='app'>
+
+          <Header />
+          {/* <h1>Hello World</h1> */}
+          {/* <Route exact path="/" component={ComponentToRender} /> */}
+        </div>
+
+      </Router>
+    )
+  }
+
+}
 
 export default App
