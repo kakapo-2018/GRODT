@@ -4,21 +4,18 @@ import React from 'react'
 class Header extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
-
     }
-
   }
 
   render() {
     return (
-      <div className="col header">
-        <audio id="GOT" src="GOT.mp3" type="audio/mp3" controls="controls"></audio>
+
+      <div onClick={this.props.reset} className="col header">
+         <audio id="GOT" src="GOT.mp3" type="audio/mp3" controls="controls"></audio>
       </div>
     )
   }
-
 }
 
 export default Header

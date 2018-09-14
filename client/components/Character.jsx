@@ -13,7 +13,7 @@ class Character extends Component {
   }
 
   componentDidMount() {
-    fetch("https://anapioficeandfire.com/api/characters/583")
+    fetch(this.props.url || "")
       .then(res => res.json())
       .then(
         (result) => {
@@ -31,7 +31,7 @@ class Character extends Component {
         }
       )
       .then(
-        fetch(`https://www.googleapis.com/customsearch/v1?q=jon snow&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
+        fetch(`https://www.googleapis.com/customsearch/v1?q=${this.props.name}&cx=003865435145121476457%3Atrepyhx0nie&searchType=image&key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA`)
         .then(res => res.json())
         .then(
           (image) => {
@@ -54,7 +54,7 @@ class Character extends Component {
     } else {
       return (
         <ul>
-          <img src={image} ></img>
+          <img className="charIMG" src={image} ></img>
           <li>Name: {items.name}</li>
           <li>Culture: {items.culture}</li>
           <li>Born: {items.born}</li>
