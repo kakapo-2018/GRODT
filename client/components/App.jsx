@@ -8,6 +8,7 @@ import FactionIce from './FactionIce'
 import FactionFire from './FactionFire'
 import Other from './Other'
 
+
 let displayChar = false;
 let displayFaction = ''
 let displayFactionChoice = true;
