@@ -4,21 +4,16 @@ import React from 'react'
 class Header extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
-
     }
-
   }
 
   render() {
     return (
-      <div className="col header">
-        <h1>Header</h1>
+      <div onClick={this.props.reset} className="col header">
       </div>
     )
   }
-
 }
 
 export default Header

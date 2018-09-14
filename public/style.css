@@ -3,19 +3,27 @@
 }
 
 
+body{
+  background-image: url('./wallpaper.png') !important;
+  background-size: 130%;
+}
+
+
 .wrapper {
 
   height: 100%;
   margin: auto;
-  
 }
+
 
 .fire {
   display: flex;
   flex-direction: column;
   width: 50%;
   background-color: red;
-  height: 800px;
+
+  height: 700px;
+
   width: 450px;
 
   float: left;
@@ -40,7 +48,9 @@
   display: flex;
   flex-direction: column;
   background-color: skyblue;
-  height: 800px;
+
+  height: 700px;
+
   width: 450px;
 
   margin-left: 50%;
@@ -60,6 +70,21 @@
   padding: 0 !important;
   width: 900px;
   max-width: 85%;
+
+
+  background-color: rgba(0,0,0,0.5)  !important;
+
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3)  !important;
+  color: white !important;
+}
+
+.charIMG{
+  width:400px !important;
+  margin: 20px 0px !important;
+}
+
+.list-group-item{
+  color: black !important;
 }
 
 
@@ -75,7 +100,9 @@
 }
 
 .table {
-  width: 20%;
+  margin: 20px 0px !important;
+  /* padding: 10px !important; */
+  opacity: 0.8;
 }
 
 .houseTableFire {
@@ -103,4 +130,3 @@
   /* width: 50%; */
   
 }
-
