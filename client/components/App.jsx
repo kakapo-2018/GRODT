@@ -10,11 +10,11 @@ import Other from './Other'
 const App = () => (
   <Router>
     <div className='app-container section'>
-      <Header />
-      <Main />
       <div className='container' >
         <div className='jumbotron' >
           {/* <FactionFire /> */}
+          <Header />
+          <Main />
           <FactionIce />
           <Character />
           <Other />

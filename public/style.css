@@ -2,8 +2,9 @@
 
 }
 
+
 .wrapper {
-  width: 80%;
+
   height: 100%;
   margin: auto;
   
@@ -14,26 +15,63 @@
   flex-direction: column;
   width: 50%;
   background-color: red;
-  height: 400px;
+  height: 800px;
+  width: 450px;
+
   float: left;
   text-align: center;
+  background-image: url('./fire.jpeg');
+  background-size: cover;
+  background-position-y: bottom;
+  
+  opacity: 1;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
+
+
+.fire:hover, .ice:hover {
+  opacity: 0.8;
+}
+
 
 .ice {
   display: flex;
   flex-direction: column;
   background-color: skyblue;
-  height: 400px;
+  height: 800px;
+  width: 450px;
+
   margin-left: 50%;
   text-align: center;
+  background-image: url('./ice.jpeg');
+  background-size: cover;
+
+  opacity: 1;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+
 }
 
+.jumbotron {
+  margin: 0;
+  padding: 0 !important;
+  width: 900px;
+  max-width: 85%;
+}
+
+
 .header {
-  background-color: rgba(167, 167, 167, 0.3);
+  background-image: url('./header-img.png');
+  background-size: cover;
   text-align: center;
   vertical-align: middle;
   /* top: 20px; */
-  height: 100px;
+  width: 900px;
+  
+  height: 225px;
 }
 
 .table {
