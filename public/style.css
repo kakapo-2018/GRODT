@@ -12,6 +12,7 @@
 body{
   background-image: url('./wallpaper.png') !important;
   background-size: 130%;
+  background-attachment: fixed;
 }
 
 
