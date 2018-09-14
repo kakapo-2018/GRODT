@@ -36,21 +36,21 @@
   height: 100px;
 }
 
-.factionfire {
-  
-}
-
-.factionice {
-
-}
-
 .table {
   width: 20%;
 }
 
-.houseTable {
+.houseTableFire {
   border: 1px solid black;
   margin: 0 auto;
+  background-color: red;
+  /* width: 50%; */
+}
+
+.houseTableIce {
+  border: 1px solid black;
+  margin: 0 auto;
+  background-color: skyblue;
   /* width: 50%; */
 }
 
