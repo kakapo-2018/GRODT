@@ -2,42 +2,100 @@
 
 }
 
+body{
+  background-image: url('./wallpaper.png') !important;
+  background-size: 130%;
+}
+
+
 .wrapper {
-  width: 80%;
   height: 100%;
   margin: auto;
-  
 }
+
 
 .fire {
   display: flex;
   flex-direction: column;
   width: 50%;
   background-color: red;
-  height: 400px;
+  height: 700px;
+  width: 450px;
+
   float: left;
   text-align: center;
+  background-image: url('./fire.jpeg');
+  background-size: cover;
+  background-position-y: bottom;
+  
+  opacity: 1;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
+
+
+.fire:hover, .ice:hover {
+  opacity: 0.8;
+}
+
 
 .ice {
   display: flex;
   flex-direction: column;
   background-color: skyblue;
-  height: 400px;
+  height: 700px;
+  width: 450px;
+
   margin-left: 50%;
   text-align: center;
+  background-image: url('./ice.jpeg');
+  background-size: cover;
+
+  opacity: 1;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+
 }
 
+.jumbotron {
+  margin: 0;
+  padding: 0 !important;
+  width: 900px;
+  max-width: 85%;
+
+  background-color: rgba(0,0,0,0.5)  !important;
+
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3)  !important;
+  color: white !important;
+}
+
+.charIMG{
+  width:400px !important;
+  margin: 20px 0px !important;
+}
+
+.list-group-item{
+  color: black !important;
+}
+
+
 .header {
-  background-color: rgba(167, 167, 167, 0.3);
+  background-image: url('./header-img.png');
+  background-size: cover;
   text-align: center;
   vertical-align: middle;
   /* top: 20px; */
-  height: 100px;
+  width: 900px;
+  
+  height: 225px;
 }
 
 .table {
-  width: 20%;
+  margin: 20px 0px !important;
+  /* padding: 10px !important; */
+  opacity: 0.8;
 }
 
 .houseTableFire {
@@ -65,4 +123,3 @@
   /* width: 50%; */
   
 }
-
