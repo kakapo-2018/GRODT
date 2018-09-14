@@ -14,7 +14,8 @@ class Header extends React.Component {
   render() {
     return (
       <div className="col header">
-        <h1>Header</h1>
+        <img src="header-img.png"></img>
+        <audio id="GOT" src="GOT.mp3" type="audio/mp3" controls="controls"></audio>
       </div>
     )
   }
