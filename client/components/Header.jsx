@@ -10,7 +10,9 @@ class Header extends React.Component {
 
   render() {
     return (
+
       <div onClick={this.props.reset} className="col header">
+         <audio id="GOT" src="GOT.mp3" type="audio/mp3" controls="controls"></audio>
       </div>
     )
   }

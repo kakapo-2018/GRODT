@@ -2,6 +2,12 @@
 
 }
 
+#GOT{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 
 body{
   background-image: url('./wallpaper.png') !important;
